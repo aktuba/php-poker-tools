@@ -1,0 +1,11 @@
+parameters:
+    level: 8
+    bootstrapFiles:
+        - ./bootstrap.php
+    paths:
+        - ./src
+    fileExtensions:
+        - php
+    tmpDir: ./tests/cache/phpstan/
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false

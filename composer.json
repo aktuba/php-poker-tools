@@ -1,0 +1,57 @@
+{
+    "name": "aktuba/poker",
+    "description": "Poker tools",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "symfony/console": "^5.3"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.3",
+        "squizlabs/php_codesniffer": "^3.6",
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-phpunit": "^0.12",
+        "thecodingmachine/phpstan-strict-rules": "^0.12",
+        "vimeo/psalm": "^4.10",
+        "phpseclib/phpseclib": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        },
+        "files": [
+            "functions.php"
+        ]
+    },
+    "scripts": {
+        "phpcs": "@php ./vendor/bin/phpcs -s",
+        "phpstan": "@php ./vendor/bin/phpstan analyse --error-format=table --no-progress",
+        "psalm": "@php ./vendor/bin/psalm --output-format=console --no-progress --report-show-info=false --show-info=true --threads=32",
+        "phpunit": "@php ./vendor/bin/phpunit --no-coverage",
+        "tests": [
+            "@phpstan",
+            "@phpcs",
+            "@psalm",
+            "@phpunit"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "aktuba",
+            "email": "aktuba@yandex.ru"
+        }
+    ]
+}
